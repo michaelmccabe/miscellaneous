@@ -1,0 +1,30 @@
+
+README
+
+1. ok, first off I didn't check in to a git repo regularly while writing this code. Neither did I want to "stage" 
+	it after the fact. I hope it's not a deal breaker. To be honest when I did use git regularly, at the mailonline,
+	I often squashed several local git commits into one to make for easier to manage merging branches. Happy to
+	discuss git at any interview.
+	
+	
+	ok, so the code...
+
+2. I've tried to separate concerns as logically as possible. To that end, access modifiers only allow the UI classes 
+	to create a command via the constructor and fetch the output (of said command) as a string.
+	
+	Also, the Command class itself only checks the command syntax, and not the logic (e.g. is the request for
+	outside the canvas?).
+	
+	I've made the Canvas class a singleton to ensure there only ever is one canvas.
+	
+3. Build wise, I've opted for maven so if you import the file as an existing maven project, it should build 
+	in eclipse/IntelliJ no problems. To run just run ConsoleDraw as a Java Application.
+	
+4. Canvas has an ArrayList of the shapes drawn. This really isn't necessary as each shape draws directly onto the
+	canvas pixels but I've left it in there. If we ever want to save Canvas objects, that would be the starting 
+	point.
+	
+5. The bucketfill method was the real head-scratcher. It took me a few minutes to realise the recursive solution.
+
+
+
